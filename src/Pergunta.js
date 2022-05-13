@@ -23,6 +23,7 @@ function MostraTelaZap(props){
     return(
         <div className="card-pergunta">
             <p>{props.propriedades.resposta}</p>
+            <BotoesZap />
         </div>
     )
 }
@@ -35,7 +36,7 @@ export default function Pergunta(props){
 
 return(
 <>
-<BotoesZap />
+
 {estado==='stage1'? <ButtonPergunta estado={estado} setEstado={setEstado} propriedades={props}/>:' '}
 {estado==='stage2'? <MostraPergunta estado={estado} setEstado={setEstado} propriedades={props}/>:' '}
 {estado==='stage3'? <MostraTelaZap estado={estado} setEstado={setEstado} propriedades={props}/>:' '}
