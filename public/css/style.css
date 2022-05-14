@@ -151,11 +151,42 @@ body{
 
 
 
-
+.btn-amarelo,.btn-verde,.btn-vermelho{
+    width: 95px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
 
 
 .btn-vermelho{
-    width: 50px;
-    height: 50px;
+  
     background-color: #D70900;
+}
+
+.btn-amarelo{
+    background-color: #FF922E;
+}
+
+.btn-verde{
+    background-color: #2FBE34;
+}
+
+.container-btn{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-resposta{
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 35%;
+    height: 45px;
 }

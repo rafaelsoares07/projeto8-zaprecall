@@ -1,4 +1,5 @@
 import React from "react"
+import Botoes from "./Botoes"
 import BotoesZap from "./BotoesZap"
 
 function ButtonPergunta(props){
@@ -23,7 +24,14 @@ function MostraTelaZap(props){
     return(
         <div className="card-pergunta">
             <p>{props.propriedades.resposta}</p>
-            <BotoesZap />
+
+            <BotoesZap>
+                <div className='container-btn'>
+                <Botoes text='Não lembro' className="btn-vermelho"/>
+                <Botoes text='Quase não lembrei' className="btn-amarelo"/>
+                <Botoes text='Zap' className="btn-verde"/>
+                </div>
+            </BotoesZap>
         </div>
     )
 }

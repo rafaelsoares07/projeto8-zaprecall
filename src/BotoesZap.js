@@ -1,8 +1,9 @@
 
 
-export default function BotoesZap(){
+export default function BotoesZap(props){
     return(
-        <div className="btn-vermelho">
-        </div>
+        <>
+        {props.children}
+        </>
     )
 }
