@@ -27,10 +27,17 @@ const Perguntas = [
 {question:" Usamos estado (state) para ____", responseQuestion:"dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"}
 ]
 
+
+function comparador(){
+    return Math.random() - 0.5; 
+}
+
+const PerguntasSort = Perguntas.sort(comparador)
+
     return(
         <div className="area-perguntas">
 
-        {Perguntas.map((item, i) => <Pergunta btnRespostas={props.btnRespostas} setBtnRespostas={props.setBtnRespostas} qtdCertas={props.qtdCertas} setQtdCertas={props.setQtdCertas} qtdRespostas={props.qtdRespostas} setQtdRespostas={props.setQtdRespostas} key={i} indice={i} pergunta={item.question} resposta={item.responseQuestion}/>)}
+        {PerguntasSort.map((item, i) => <Pergunta btnRespostas={props.btnRespostas} setBtnRespostas={props.setBtnRespostas} qtdCertas={props.qtdCertas} setQtdCertas={props.setQtdCertas} qtdRespostas={props.qtdRespostas} setQtdRespostas={props.setQtdRespostas} key={i} indice={i} pergunta={item.question} resposta={item.responseQuestion}/>)}
             
         </div>
     )
