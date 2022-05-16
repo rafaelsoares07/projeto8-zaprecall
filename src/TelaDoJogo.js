@@ -45,7 +45,7 @@ function Footer(props){
         if(props.qtdRespostas<8 ){
             return(
                 <div className="footer">
-                    <p>{props.qtdRespostas}/8 Concluidos!</p> 
+                    <p className="p-footer">{props.qtdRespostas}/8 Concluidos!</p> 
                     
                     <div>
                     {props.btnRespostas.map((item) =>  <img className="item-response" src={item}/>)}
@@ -63,7 +63,7 @@ function Footer(props){
                         <img src="assets/img/party.png"/>
                         <span>Parabéns</span>
                         <p>Você não esqueceu nenhum FlashCard</p>
-                        <p>{props.qtdRespostas}/8 Concluidos!</p>
+                        <p className="p-footer">{props.qtdRespostas}/8 Concluidos!</p>
                         
                     </div>
 
@@ -81,7 +81,7 @@ function Footer(props){
                         <img src="assets/img/sad.png"/>
                         <span>Putss</span>
                         <p>Você não acertou todas, mas continue tentando!</p>
-                        <p>{props.qtdRespostas}/8 Concluidos!</p>
+                        <p className="p-footer">{props.qtdRespostas}/8 Concluidos!</p>
                        
                     </div>
                     <div className="div-resul">

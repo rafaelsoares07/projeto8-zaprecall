@@ -28,7 +28,7 @@ function MostraTelaZap(props) {
 
             <div className='container-btn'>
                 <Botoes btnRespostas={props.btnRespostas} setBtnRespostas={props.setBtnRespostas} qtdRespostas={props.qtdRespostas} setQtdRespostas={props.setQtdRespostas} estado={props.estado} setEstado={props.setEstado} formatacaoCard={props.formatacaoCard} setFormatacaoCard={props.setFormatacaoCard} cor='vermelho' text='Não lembro' classCss="btn-vermelho" />
-                <Botoes btnRespostas={props.btnRespostas} setBtnRespostas={props.setBtnRespostas} qtdRespostas={props.qtdRespostas} setQtdRespostas={props.setQtdRespostas} estado={props.estado} setEstado={props.setEstado} formatacaoCard={props.formatacaoCard} setFormatacaoCard={props.setFormatacaoCard} cor='amarelo' text='Quase não lembrei' classCss="btn-amarelo" />
+                <Botoes btnRespostas={props.btnRespostas} setBtnRespostas={props.setBtnRespostas} qtdCertas={props.qtdCertas} setQtdCertas={props.setQtdCertas} qtdRespostas={props.qtdRespostas} setQtdRespostas={props.setQtdRespostas} estado={props.estado} setEstado={props.setEstado} formatacaoCard={props.formatacaoCard} setFormatacaoCard={props.setFormatacaoCard} cor='amarelo' text='Quase não lembrei' classCss="btn-amarelo" />
                 <Botoes btnRespostas={props.btnRespostas} setBtnRespostas={props.setBtnRespostas} qtdCertas={props.qtdCertas} setQtdCertas={props.setQtdCertas} qtdRespostas={props.qtdRespostas} setQtdRespostas={props.setQtdRespostas} estado={props.estado} setEstado={props.setEstado} formatacaoCard={props.formatacaoCard} setFormatacaoCard={props.setFormatacaoCard} cor='verde' text='Zap' classCss="btn-verde" />
             </div>
 

@@ -10,10 +10,13 @@ export default function Botoes(props){
         props.setQtdRespostas(props.qtdRespostas+1)
 
         if(props.cor==='verde'){
+            console.log('verde')
             props.setQtdCertas(props.qtdCertas+1)
             props.setBtnRespostas([...props.btnRespostas,'assets/img/verde.png'])
         }
         if(props.cor==='amarelo'){
+            console.log('amarelo')
+            props.setQtdCertas(props.qtdCertas+1)
             props.setBtnRespostas([...props.btnRespostas,'assets/img/amarelo.png'])
         }
     

@@ -115,6 +115,7 @@ body{
 
 
 .footer{
+    font-family: 'Recursive', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -216,6 +217,7 @@ body{
 
 
 .footer-sucess{
+    font-family: 'Recursive', sans-serif;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -248,6 +250,7 @@ body{
     text-align: center;
 }
 .footer-fail{
+    font-family: 'Recursive', sans-serif;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -287,3 +290,4 @@ body{
     text-decoration: line-through;
     color:#FF922E ;
 }
+
