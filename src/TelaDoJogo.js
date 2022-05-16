@@ -1,3 +1,4 @@
+import React from "react"
 import Pergunta from "./Pergunta"
 
 function Header(){
@@ -12,48 +13,98 @@ function Header(){
     )
 }
 
-
-
-function AreaQuestions(){
+function AreaQuestions(props){
 
 const Perguntas = [
     
-{question:"O que é JSX1?", responseQuestion:"Uma extensão de linguagem do JavaScript"},
-{question:"O React é?", responseQuestion:"uma biblioteca JavaScript para construção de interfaces"},
+{question:"O que é JSX ?", responseQuestion:"Uma extensão de linguagem do JavaScript"},
+{question:"O React é ?", responseQuestion:"uma biblioteca JavaScript para construção de interfaces"},
 {question:"Componentes devem iniciar com", responseQuestion:"letra maiúscula"},
-{question:"Podemos colocar __ dentro do JSX?", responseQuestion:"expressões"},
-{question:"O ReactDOM nos ajuda __?", responseQuestion:"nteragindo com a DOM para colocar componentes React na mesma"},
-{question:"Usamos o npm para __", responseQuestion:"gerenciar os pacotes necessários e suas dependências"},
-{question:"Usamos props para __ ", responseQuestion:"Uma extensão de linguagem do JavaScript"},
-{question:" Usamos estado (state) para __", responseQuestion:"dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"}
+{question:"Podemos colocar _____ dentro do JSX ?", responseQuestion:"expressões"},
+{question:"O ReactDOM nos ajuda ______ ?", responseQuestion:"nteragindo com a DOM para colocar componentes React na mesma"},
+{question:"Usamos o npm para _____", responseQuestion:"gerenciar os pacotes necessários e suas dependências"},
+{question:"Usamos props para _____ ", responseQuestion:"Uma extensão de linguagem do JavaScript"},
+{question:" Usamos estado (state) para ____", responseQuestion:"dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"}
 ]
 
     return(
         <div className="area-perguntas">
 
-        {Perguntas.map((item, i) => <Pergunta indice={i} pergunta={item.question} resposta={item.responseQuestion}/>)}
+        {Perguntas.map((item, i) => <Pergunta qtdCertas={props.qtdCertas} setQtdCertas={props.setQtdCertas} qtdRespostas={props.qtdRespostas} setQtdRespostas={props.setQtdRespostas} key={i} indice={i} pergunta={item.question} resposta={item.responseQuestion}/>)}
             
         </div>
     )
 }
 
 
-function Footer(){
+
+function Footer(props){
+    console.log(props)
+    function FormatacaoCondicionalFooter(){
+        
+        if(props.qtdRespostas<8 ){
+            return(
+                <div className="footer">
+                    <p>{props.qtdRespostas}/8 Concluidos!</p> 
+                    
+                    <div>
+                    {props.btnRespostas.map((item) =>  <img src={item}/>)}
+                    </div>
+                   
+                   
+                </div>
+                
+            )
+        }
+        if(props.qtdRespostas===8 && props.qtdCertas===8){
+            return(
+                <div className="footer-sucess">
+                    <div>
+                        <img src="assets/img/party.png"/>
+                        <span>Parabéns</span>
+                        <p>Você não esqueceu nenhum FlashCard</p>
+                        <p>{props.qtdRespostas}/8 Concluidos!</p>
+                    </div>
+                </div>
+            )
+        }
+        if(props.qtdRespostas ===8 && props.qtdCertas<8){
+            return(
+                <div className="footer-fail">
+                    <div>
+                        <img src="assets/img/sad.png"/>
+                        <span>Putss</span>
+                        <p>Você não acertou todas, mas continue tentando!</p>
+                        <p>{props.qtdRespostas}/8 Concluidos!</p>
+                    </div>
+                </div>
+            )
+        }
+
+        
+        
+    }
+
     return(
-        <div className="footer">
-            <p>0/8 Concluidos</p>
-        </div>
+        <>{FormatacaoCondicionalFooter()}</>
     )
     
 }
 
 export default function TelaDoJogo(){
+    const [qtdRespostas, setQtdRespostas] = React.useState(0)
+    const[qtdCertas , setQtdCertas] = React.useState(0)
+    const[btnRespostas, setBtnRespostas] = React.useState(['assets/img/verde.png','assets/img/vermelho.png','assets/img/amarelo.png'])
+
+    console.log(qtdCertas)
+    console.log(qtdRespostas)
+       
     return(
         <div className="container">
            
             <Header />
-            <AreaQuestions/>
-            <Footer />
+            <AreaQuestions qtdRespostas={qtdRespostas} setQtdRespostas={setQtdRespostas} qtdCertas={qtdCertas} setQtdCertas={setQtdCertas} />
+            <Footer btnRespostas={btnRespostas} qtdRespostas={qtdRespostas} qtdCertas={qtdCertas} />
             
         </div>
     )

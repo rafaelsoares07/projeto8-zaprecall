@@ -1,14 +1,6 @@
 import ReactDOM from "react-dom";
-import TelaAtual from "./TelaAtual";
+import App from './App'
 
-function App(){
-    
-    return(
-        <> 
-        <TelaAtual/>
-        </>
-        
-    )
-}
+
 
 ReactDOM.render(<App />, document.querySelector('.root'))
