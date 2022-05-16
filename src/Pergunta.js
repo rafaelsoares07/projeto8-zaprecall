@@ -45,7 +45,7 @@ function MostraTelaRespondida(props) {
             
             return (
                 <div className="caixa-pergunta-final">
-                    <p>Pergunta {props.propriedades.indice + 1}</p>
+                    <p className="p-verde">Pergunta {props.propriedades.indice + 1}</p>
                     <img src="assets/img/verde.png" />
                 </div>
             )
@@ -54,7 +54,7 @@ function MostraTelaRespondida(props) {
         if (props.formatacaoCard === 'amarelo') {
             return (
                 <div className="caixa-pergunta-final">
-                    <p>Pergunta {props.propriedades.indice + 1}</p>
+                    <p className="p-amarelo">Pergunta {props.propriedades.indice + 1}</p>
                     <img src="assets/img/amarelo.png" />
                 </div>
             )
@@ -62,7 +62,7 @@ function MostraTelaRespondida(props) {
         if (props.formatacaoCard === 'vermelho') {
             return (
                 <div className="caixa-pergunta-final">
-                    <p>Pergunta {props.propriedades.indice + 1}</p>
+                    <p className="p-vermelho">Pergunta {props.propriedades.indice + 1}</p>
                     <img src="assets/img/vermelho.png" />
                 </div>
             )

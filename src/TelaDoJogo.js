@@ -48,7 +48,7 @@ function Footer(props){
                     <p>{props.qtdRespostas}/8 Concluidos!</p> 
                     
                     <div>
-                    {props.btnRespostas.map((item) =>  <img src={item}/>)}
+                    {props.btnRespostas.map((item) =>  <img className="item-response" src={item}/>)}
                     </div>
                    
                    
@@ -68,7 +68,7 @@ function Footer(props){
                     </div>
 
                     <div className="div-resul">
-                        {props.btnRespostas.map((item) =>  <img src={item}/>)}
+                        {props.btnRespostas.map((item) =>  <img className="item-response" src={item}/>)}
                     </div>
                    
                 </div>
@@ -85,7 +85,7 @@ function Footer(props){
                        
                     </div>
                     <div className="div-resul">
-                        {props.btnRespostas.map((item) =>  <img src={item}/>)}
+                        {props.btnRespostas.map((item) =>  <img className="item-response" src={item}/>)}
                     </div>
                    
                 </div>
@@ -107,8 +107,7 @@ export default function TelaDoJogo(){
     const[qtdCertas , setQtdCertas] = React.useState(0)
     const[btnRespostas, setBtnRespostas] = React.useState([])
 
-    //console.log(qtdCertas)
-    //console.log(qtdRespostas)
+    
        
     return(
         <div className="container">

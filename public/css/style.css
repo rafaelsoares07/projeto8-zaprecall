@@ -268,3 +268,22 @@ body{
     align-items: flex-start;
 }
 
+.item-response{
+    margin: 3px 3px ;
+}
+
+
+.p-verde{
+    text-decoration: line-through;
+    color: #2FBE34;
+}
+
+.p-vermelho{
+    text-decoration: line-through;
+    color:#FF3030;
+}
+
+.p-amarelo{
+    text-decoration: line-through;
+    color:#FF922E ;
+}
