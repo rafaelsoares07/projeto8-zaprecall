@@ -2,6 +2,8 @@ import React from 'react';
 
 export default function Botoes(props){
     
+    
+
     function mudarFormatacao(props){
         props.setEstado('stage4'); 
         props.setFormatacaoCard(props.cor);
@@ -9,6 +11,14 @@ export default function Botoes(props){
 
         if(props.cor==='verde'){
             props.setQtdCertas(props.qtdCertas+1)
+            props.setBtnRespostas([...props.btnRespostas,'assets/img/verde.png'])
+        }
+        if(props.cor==='amarelo'){
+            props.setBtnRespostas([...props.btnRespostas,'assets/img/amarelo.png'])
+        }
+    
+        if(props.cor==='vermelho'){
+            props.setBtnRespostas([...props.btnRespostas,'assets/img/vermelho.png'])
         }
     }
 

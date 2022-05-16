@@ -30,7 +30,7 @@ const Perguntas = [
     return(
         <div className="area-perguntas">
 
-        {Perguntas.map((item, i) => <Pergunta qtdCertas={props.qtdCertas} setQtdCertas={props.setQtdCertas} qtdRespostas={props.qtdRespostas} setQtdRespostas={props.setQtdRespostas} key={i} indice={i} pergunta={item.question} resposta={item.responseQuestion}/>)}
+        {Perguntas.map((item, i) => <Pergunta btnRespostas={props.btnRespostas} setBtnRespostas={props.setBtnRespostas} qtdCertas={props.qtdCertas} setQtdCertas={props.setQtdCertas} qtdRespostas={props.qtdRespostas} setQtdRespostas={props.setQtdRespostas} key={i} indice={i} pergunta={item.question} resposta={item.responseQuestion}/>)}
             
         </div>
     )
@@ -59,24 +59,35 @@ function Footer(props){
         if(props.qtdRespostas===8 && props.qtdCertas===8){
             return(
                 <div className="footer-sucess">
-                    <div>
+                    <div className="div">
                         <img src="assets/img/party.png"/>
                         <span>Parabéns</span>
                         <p>Você não esqueceu nenhum FlashCard</p>
                         <p>{props.qtdRespostas}/8 Concluidos!</p>
+                        
                     </div>
+
+                    <div className="div-resul">
+                        {props.btnRespostas.map((item) =>  <img src={item}/>)}
+                    </div>
+                   
                 </div>
             )
         }
         if(props.qtdRespostas ===8 && props.qtdCertas<8){
             return(
                 <div className="footer-fail">
-                    <div>
+                    <div className="div">
                         <img src="assets/img/sad.png"/>
                         <span>Putss</span>
                         <p>Você não acertou todas, mas continue tentando!</p>
                         <p>{props.qtdRespostas}/8 Concluidos!</p>
+                       
                     </div>
+                    <div className="div-resul">
+                        {props.btnRespostas.map((item) =>  <img src={item}/>)}
+                    </div>
+                   
                 </div>
             )
         }
@@ -94,16 +105,16 @@ function Footer(props){
 export default function TelaDoJogo(){
     const [qtdRespostas, setQtdRespostas] = React.useState(0)
     const[qtdCertas , setQtdCertas] = React.useState(0)
-    const[btnRespostas, setBtnRespostas] = React.useState(['assets/img/verde.png','assets/img/vermelho.png','assets/img/amarelo.png'])
+    const[btnRespostas, setBtnRespostas] = React.useState([])
 
-    console.log(qtdCertas)
-    console.log(qtdRespostas)
+    //console.log(qtdCertas)
+    //console.log(qtdRespostas)
        
     return(
         <div className="container">
            
             <Header />
-            <AreaQuestions qtdRespostas={qtdRespostas} setQtdRespostas={setQtdRespostas} qtdCertas={qtdCertas} setQtdCertas={setQtdCertas} />
+            <AreaQuestions btnRespostas={btnRespostas} setBtnRespostas={setBtnRespostas} qtdRespostas={qtdRespostas} setQtdRespostas={setQtdRespostas} qtdCertas={qtdCertas} setQtdCertas={setQtdCertas} />
             <Footer btnRespostas={btnRespostas} qtdRespostas={qtdRespostas} qtdCertas={qtdCertas} />
             
         </div>
